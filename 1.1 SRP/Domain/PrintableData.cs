@@ -13,7 +13,7 @@ namespace _1._SRP.Domain
             OrderNumber = orderNumber;
         }
         public Guid OrderNumber { get; }
-        public IList<PrintableItem> Items { get; set; } = new List<PrintableItem>();
+        public IEnumerable<PrintableItem>? Items { get; set; } = new List<PrintableItem>();
         public decimal GetOverallNetPrice()
         {
             return Items?.Sum(x => x.TotalNetPrice) ?? 0;
@@ -23,6 +23,7 @@ namespace _1._SRP.Domain
     internal class PrintableItem
     {
         public string? Name { get; set; }
+        public decimal DiscountedPrice { get; set; }
         public int Quantity { get; set; }
         public decimal TotalNetPrice { get; set; }
     }

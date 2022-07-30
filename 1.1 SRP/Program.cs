@@ -7,8 +7,9 @@ namespace _1._SRP
     {
         static void Main(string[] args)
         {
+            var orderId = Guid.NewGuid();
             var reportGenerator = new ReportGenerator();
-            var printableData = reportGenerator.GenerateReportData(Guid.NewGuid());
+            var printableData = reportGenerator.GenerateReportData(orderId);
 
             var reportPrinter = new ReportPrinter();
             reportPrinter.Print(printableData);
