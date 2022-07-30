@@ -5,11 +5,16 @@ VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{008A98A6-C4ED-4B2C-853F-8C6E29CC44D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1. SRP", "1. SRP\1. SRP.csproj", "{5499E071-63F6-4419-B740-4D3772F83B56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "1. SRP", "1. SRP\1. SRP.csproj", "{5499E071-63F6-4419-B740-4D3772F83B56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. DIP", "2. DIP\2. DIP.csproj", "{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. DIP", "2. DIP\2. DIP.csproj", "{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2.1 DIP_with_repository", "2.1 DIP_with_repository\2.1 DIP_with_repository.csproj", "{99159C9C-71FF-4BAC-BBF3-3B285260C294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.1 DIP_with_repository", "2.1 DIP_with_repository\2.1 DIP_with_repository.csproj", "{99159C9C-71FF-4BAC-BBF3-3B285260C294}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AABC27D6-6335-452D-8CA3-8E8E3C7692E8}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

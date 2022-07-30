@@ -1,28 +1,17 @@
-﻿namespace _1._SRP
+﻿using _1._SRP.Domain;
+using _1._SRP.Presentation;
+
+namespace _1._SRP
 {
     class Program
     {
         static void Main(string[] args)
         {
-            RawData rawData = new RawData(); // Get data from db
-            var printableData = GenerateReport(rawData);
-            PrintData(printableData);
-        }
+            var reportGenerator = new ReportGenerator();
+            var printableData = reportGenerator.GenerateReportData(Guid.NewGuid());
 
-        static PrintableData GenerateReport(RawData rawData)
-        {
-            var printableData = new PrintableData();
-            // TODO: Generate printable data
-            return printableData;
-        }
-
-        static void PrintData(PrintableData data)
-        {
-            // Print data
+            var reportPrinter = new ReportPrinter();
+            reportPrinter.Print(printableData);
         }
     }
-
-    class RawData { }
-
-    class PrintableData { }
 }
