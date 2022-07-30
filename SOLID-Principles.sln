@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2. DIP", "2. DIP\2. DIP.csproj", "{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "2.1 DIP_with_repository", "2.1 DIP_with_repository\2.1 DIP_with_repository.csproj", "{99159C9C-71FF-4BAC-BBF3-3B285260C294}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AABC27D6-6335-452D-8CA3-8E8E3C7692E8}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
@@ -32,10 +30,6 @@ Global
 		{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1BCA1A-D3AD-4E9E-9CEC-601560C0B9E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99159C9C-71FF-4BAC-BBF3-3B285260C294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99159C9C-71FF-4BAC-BBF3-3B285260C294}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99159C9C-71FF-4BAC-BBF3-3B285260C294}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99159C9C-71FF-4BAC-BBF3-3B285260C294}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1B4DCB93-A244-41CC-ACFA-7E69D95FCF95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1B4DCB93-A244-41CC-ACFA-7E69D95FCF95}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B4DCB93-A244-41CC-ACFA-7E69D95FCF95}.Release|Any CPU.ActiveCfg = Release|Any CPU
