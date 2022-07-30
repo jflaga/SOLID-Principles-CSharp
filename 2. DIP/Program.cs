@@ -1,50 +1,21 @@
-﻿namespace _2._DIP
+﻿using _2._DIP.Data;
+using _2._DIP.Domain;
+using _2._DIP.Presentation;
+
+namespace _2._DIP
 {
     class Program
     {
         static void Main(string[] args)
         {
             // Constructing object graph
-            var reportGenerator = new ReportGenerator();
-            var printReportController = new PrintReportController(reportGenerator);
+            IOrderRepository orderRepository = new OrderRepository();
+            var reportGenerator = new ReportGenerator(orderRepository);
+            var reportPrinter = new ReportPrinter(reportGenerator);
 
-            // Doing action triggered by the user
-            printReportController.PrintData();
+            // Do work
+            var orderId = Guid.NewGuid();
+            reportPrinter.Print(orderId);
         }
     }
-
-    class ReportGenerator
-    {
-        public PrintableData GenerateReport()
-        {
-            var rawData = new RawData(); // Get data from repository
-            // TODO: Generate printable data
-            return new PrintableData();
-        }
-    }
-
-    class PrintReportController
-    {
-        private readonly ReportGenerator reportGenerator;
-
-        public PrintReportController(ReportGenerator reportGenerator)
-        {
-            this.reportGenerator = reportGenerator;
-        }
-
-        public void PrintData()
-        {
-            var printableData = reportGenerator.GenerateReport();
-            printDataToScreen(printableData);
-        }
-
-        private void printDataToScreen(PrintableData data)
-        {
-            // TODO: Print data
-        }
-    }
-
-    class RawData { }
-
-    class PrintableData { }
 }
