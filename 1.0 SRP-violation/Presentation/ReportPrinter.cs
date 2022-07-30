@@ -11,6 +11,9 @@ namespace _1._SRP_violation.Presentation
     {
         public void Print(Guid orderId)
         {
+            Console.WriteLine($"SRP violation example");
+            Console.WriteLine();
+
             // Get data from db
             var orderRepository = new OrderRepository();
             var order = orderRepository.GetOrder(orderId);
@@ -30,6 +33,7 @@ namespace _1._SRP_violation.Presentation
                     Console.WriteLine($"{item.Name}\t\t{itemNetPrice}\t{item.Quantity}\t{totalNetPrice}");
                 }
             }
+
             Console.WriteLine($"    \t\t     \t   \t-----");
             Console.WriteLine($"    \t\t     \t   \t{overallNetPrice}");
         }
