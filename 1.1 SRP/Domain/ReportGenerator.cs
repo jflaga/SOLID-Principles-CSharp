@@ -15,16 +15,17 @@ namespace _1._SRP.Domain
             var orderRepository = new OrderRepository();
             var order = orderRepository.GetOrder(orderId);
 
-            // TODO: Convert raw data to printable data
+            // Convert raw data to printable data
             var printableData = new PrintableData(order.Id);
             printableData.Items = (from item in order.Items
-                                  let totalOrigPrice = item.Price * item.Quantity
-                                  select new PrintableItem
+                                  let discountedPrice = item.Price - (item.Price * item.Discount)
+                                   select new PrintableItem
                                   {
                                       Name = item.Name,
+                                      DiscountedPrice = discountedPrice,
                                       Quantity = item.Quantity,
-                                      TotalNetPrice = totalOrigPrice - (totalOrigPrice * item.Discount)
-                                  })
+                                      TotalNetPrice = discountedPrice * item.Quantity
+                                   })
                                   .ToList();
             return printableData;
         }
