@@ -1,41 +1,61 @@
-﻿using _1._SRP_violation.Data;
+﻿using _1._0_SRP_violation.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _1._SRP_violation.Presentation
+namespace _1._0_SRP_violation.Presentation
 {
     internal class ReportPrinter
     {
-        public void Print(Guid orderId)
+        public void Print()
         {
             Console.WriteLine($"SRP violation example");
             Console.WriteLine();
 
             // Get data from db
-            var orderRepository = new OrderRepository();
-            var order = orderRepository.GetOrder(orderId);
+            var repository = new Repository();
+            var data = repository.GetData();
 
-            Console.WriteLine($"Order: {order.Id}");
-            Console.WriteLine($"Items:");
-            Console.WriteLine($"Name\t\tPrice\tQty\tTotal");
-            decimal overallNetPrice = 0;
-            if (order.Items != null)
+            Console.WriteLine($"Name\t\tValue\tFee\tNet Value");
+            foreach (var datum in data)
             {
-                foreach (var item in order.Items)
-                {
-                    var itemNetPrice = item.Price - (item.Price * item.Discount);
-                    var totalNetPrice = itemNetPrice * item.Quantity;
-                    overallNetPrice += totalNetPrice;
+                Console.Write($"{datum.Name}\t");
+                PrintValueAndFee(datum);
+                PrintNetValue(datum);
 
-                    Console.WriteLine($"{item.Name}\t\t{itemNetPrice}\t{item.Quantity}\t{totalNetPrice}");
-                }
+                Console.WriteLine();
             }
+        }
 
-            Console.WriteLine($"    \t\t     \t   \t-----");
-            Console.WriteLine($"    \t\t     \t   \t{overallNetPrice}");
+        private static void PrintValueAndFee(Datum datum)
+        {
+            if (datum.Value < 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{datum.Value}\t{datum.Fee}\t");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.Write($"{datum.Value}\t{datum.Fee}\t");
+            }
+        }
+
+        private static void PrintNetValue(Datum datum)
+        {
+            var netValue = datum.Value - datum.Fee;
+            if (netValue < 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write($"{datum.Value - datum.Fee}");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.Write($"{datum.Value - datum.Fee}");
+            }
         }
     }
 }
