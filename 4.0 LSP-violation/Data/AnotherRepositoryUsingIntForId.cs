@@ -9,13 +9,13 @@ namespace _4._0_LSP_violation.Data
 {
     internal class AnotherRepositoryUsingIntForId : IAnotherRepositoryUsingIntForId
     {
-        public object GetById(int id)
+        public object FindBy(int id)
         {
             object objectFromDb = new object(); // get from db
             return objectFromDb;
         }
 
-        public object GetById(Guid id)
+        public object FindBy(Guid id)
         {
             throw new NotImplementedException();
         }

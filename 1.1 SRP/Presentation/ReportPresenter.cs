@@ -11,9 +11,6 @@ namespace _1._SRP.Presentation
     {
         public void Present(PrintableData data)
         {
-            Console.WriteLine($"SRP example");
-            Console.WriteLine();
-
             Console.WriteLine($"Order: {data.OrderNumber}");
             Console.WriteLine($"Items:");
             Console.WriteLine($"Name\t\tPrice\tQty\tTotal");

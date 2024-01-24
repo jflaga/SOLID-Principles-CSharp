@@ -10,12 +10,12 @@ namespace _4._LSP_violation.Data
 {
     internal class OrderRepository : IOrderRepository
     {
-        public Order GetById(int id)
+        public Order FindBy(int id)
         {
             throw new NotImplementedException();
         }
 
-        public Order GetById(Guid orderId)
+        public Order FindBy(Guid orderId)
         {
             // TODO: SQL query here
 

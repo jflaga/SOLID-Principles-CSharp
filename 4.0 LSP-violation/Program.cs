@@ -8,6 +8,9 @@ namespace _4._LSP_violation
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"LSP violation example");
+            Console.WriteLine();
+
             // Constructing object graph
             IOrderRepository orderRepository = new OrderRepository();
             var reportGenerator = new ReportGenerator(orderRepository);

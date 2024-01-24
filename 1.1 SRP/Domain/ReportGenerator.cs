@@ -12,7 +12,7 @@ namespace _1._SRP.Domain
         public PrintableData GenerateReportData(Guid orderId)
         {
             // Get data from db
-            var orderRepository = new OrderRepository();
+            var orderRepository = new OrderRepository(); // Domain code depends on concretion (instead of on abstraction)
             var order = orderRepository.GetOrder(orderId);
 
             // Convert raw data to printable data

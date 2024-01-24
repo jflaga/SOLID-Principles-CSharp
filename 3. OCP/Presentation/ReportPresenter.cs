@@ -20,9 +20,6 @@ namespace _3._OCP.Presentation
         {
             PrintableData data = reportGenerator.GenerateReportData(orderId);
 
-            Console.WriteLine($"DIP example");
-            Console.WriteLine();
-
             Console.WriteLine($"Order: {data.OrderNumber}");
             Console.WriteLine($"Items:");
             Console.WriteLine($"Name\t\tPrice\tQty\tTotal");

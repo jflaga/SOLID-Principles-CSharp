@@ -11,13 +11,11 @@ namespace _1._SRP_violation.Presentation
     {
         public void Present(Guid orderId)
         {
-            Console.WriteLine($"SRP violation example");
-            Console.WriteLine();
-
             // Get data from db
             var orderRepository = new OrderRepository();
             var order = orderRepository.GetOrder(orderId);
 
+            // Display order details
             Console.WriteLine($"Order: {order.Id}");
             Console.WriteLine($"Items:");
             Console.WriteLine($"Name\t\tPrice\tQty\tTotal");
@@ -26,6 +24,7 @@ namespace _1._SRP_violation.Presentation
             {
                 foreach (var item in order.Items)
                 {
+                    // Calculate total price of each item
                     var itemNetPrice = item.Price - (item.Price * item.Discount);
                     var totalNetPrice = itemNetPrice * item.Quantity;
                     overallNetPrice += totalNetPrice;

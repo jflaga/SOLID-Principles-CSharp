@@ -22,3 +22,29 @@ Simple examples of using the SOLID (or SDOLI) Principles in C# (.NET Core)
 
 
 **SDOLI**: from https://www.hanselman.com/blog/HanselminutesPodcast145SOLIDPrinciplesWithUncleBobRobertCMartin.aspx)
+
+
+## Explanation
+
+One does not adhere to each individual principle in isolation.
+
+If you follow one principle, you will inadvertently follow the other principles.
+
+If you follow OCP, you also have to follow SRP, and DIP
+
+
+**Requirement:** Display order id with items. If quantity is greater than 100, render it in red.
+
+![](print-order-details.png)
+
+### 1.0 SRP-violation
+
+### 1.1 SRP
+
+### 2. DIP
+
+### 3. OCP
+
+### 4.0 LSP-violation
+
+

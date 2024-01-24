@@ -8,6 +8,9 @@ namespace _2._DIP
     {
         static void Main(string[] args)
         {
+            Console.WriteLine($"DIP example");
+            Console.WriteLine();
+
             // Constructing object graph
             IOrderRepository orderRepository = new OrderRepository();
             var reportGenerator = new ReportGenerator(orderRepository);

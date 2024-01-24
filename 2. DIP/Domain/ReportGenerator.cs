@@ -9,7 +9,7 @@ namespace _2._DIP.Domain
 {
     internal class ReportGenerator
     {
-        private readonly IOrderRepository orderRepository;
+        private readonly IOrderRepository orderRepository; // Domain code depends on abstraction (not on concretion)
 
         public ReportGenerator(IOrderRepository orderRepository)
         {

@@ -18,7 +18,7 @@ namespace _4._LSP_violation.Domain
 
         public PrintableData GenerateReportData(int orderId)
         {
-            var order = orderRepository.GetById(orderId);
+            var order = orderRepository.FindBy(orderId);
 
             // Convert raw data to printable data
             var printableData = new PrintableData(order.Id);

@@ -19,7 +19,7 @@ namespace _3._OCP.Presentation
         public void Print(Guid orderId)
         {
             // print to printer
-            Console.WriteLine("Printing to printer...");
+            Console.WriteLine("\nSending to printer...");
         }
     }
 }

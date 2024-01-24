@@ -8,8 +8,8 @@ namespace _4._0_LSP_violation.Domain
 {
     internal interface IBaseGenericRepository<T>
     {
-        T GetById(Guid id);
+        T FindBy(Guid id);
 
-        T GetById(int id);
+        T FindBy(int id);
     }
 }
