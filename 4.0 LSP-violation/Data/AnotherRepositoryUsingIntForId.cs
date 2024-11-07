@@ -9,6 +9,11 @@ namespace _4._0_LSP_violation.Data
 {
     internal class AnotherRepositoryUsingIntForId : IAnotherRepositoryUsingIntForId
     {
+        public void Delete(Guid id)
+        {
+            // delete entity
+        }
+
         public object FindBy(int id)
         {
             object objectFromDb = new object(); // get from db

@@ -10,6 +10,12 @@ namespace _4._LSP_violation.Data
 {
     internal class OrderRepository : IOrderRepository
     {
+        public void Delete(Guid id)
+        {
+            // NOTE: deletion is not allowed for Orders
+            throw new NotImplementedException();
+        }
+
         public Order FindBy(int id)
         {
             throw new NotImplementedException();
@@ -59,5 +65,7 @@ namespace _4._LSP_violation.Data
                 }
             };
         }
+
+
     }
 }
