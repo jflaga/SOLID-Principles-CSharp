@@ -23,18 +23,20 @@ namespace _3._OCP
             // -> If print to printer
             //var presenter = reportPresenterFactory.CreatePresenter(PresenterType.Printer);
 
-            IPresenter? presenter;
             Console.WriteLine($"Press 'S' to display on Screen.");
             Console.WriteLine($"Press 'P' to print from Printer.");
 
             var keyInput = Console.ReadLine();
-            if (keyInput?.ToUpper() == "P")
-                presenter = reportPresenterFactory.CreatePresenter(PresenterType.Printer);
-            else
-                presenter = reportPresenterFactory.CreatePresenter(PresenterType.Screen);
+            var presenterType = PresenterType.Screen;
 
+            if (keyInput?.ToUpper() == "P")
+                presenterType = PresenterType.Printer;
+            else if (keyInput?.ToUpper() == "S")
+                presenterType = PresenterType.Screen;
+
+            IPresenter presenter = reportPresenterFactory.CreatePresenter(presenterType);
             var orderId = Guid.NewGuid();
-            presenter?.Print(orderId);
+            presenter.Print(orderId);
         }
     }
 }

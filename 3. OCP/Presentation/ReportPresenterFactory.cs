@@ -16,7 +16,7 @@ namespace _3._OCP.Presentation
             this.reportGenerator = reportGenerator;
         }
 
-        public IPresenter? CreatePresenter(PresenterType type)
+        public IPresenter CreatePresenter(PresenterType type)
         {
             switch (type)
             {
@@ -24,9 +24,9 @@ namespace _3._OCP.Presentation
                     return new ReportPresenter(reportGenerator);
                 case PresenterType.Printer:
                     return new ReportPrinter(reportGenerator);
+                default:
+                    return new NullPresenter();
             }
-
-            return null;
         }
     }
 }
